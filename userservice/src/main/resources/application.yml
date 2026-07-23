@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILE:local}
+
+  application:
+    name: user-service
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-main.yaml
+    enabled: true
+
+logging:
+  level:
+    com.example.userservice: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
