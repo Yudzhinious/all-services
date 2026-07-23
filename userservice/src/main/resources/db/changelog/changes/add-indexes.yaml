@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-indexes
+      author: developer
+      changes:
+        - createIndex:
+            tableName: users
+            indexName: idx_users_email
+            columns:
+              - column:
+                  name: email
+        - createIndex:
+            tableName: users
+            indexName: idx_users_name_surname
+            columns:
+              - column:
+                  name: name
+              - column:
+                  name: surname
+        - createIndex:
+            tableName: payment_cards
+            indexName: idx_payment_cards_user_id
+            columns:
+              - column:
+                  name: user_id
+        - createIndex:
+            tableName: payment_cards
+            indexName: idx_payment_cards_number
+            columns:
+              - column:
+                  name: number
